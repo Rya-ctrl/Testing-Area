@@ -277,19 +277,14 @@ class EmbedManager(commands.Cog, name="Embed Manager"):
         self,
         ctx: commands.Context,
         message: BotMessage,
-        color: Optional[discord.Color],
-        title: str,
         *,
-        description: str,
     ):
         """
         Edit a message sent by Bot's embeds.
 
         `message` may be a message ID or message link of the bot's embed.
         """
-        color = color or self.bot.main_color
-        embed = discord.Embed(color=color, title=title, description=description)
-        await message.edit(embed=embed)
+        await message.edit(message)
         await ctx.message.add_reaction(YES_EMOJI)
 
     @embed_edit.command(name="json", aliases=["fromjson", "fromdata"])
