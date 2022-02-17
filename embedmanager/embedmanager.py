@@ -81,9 +81,9 @@ class PlainMessage(commands.Cog, name="Plain Message"):
             raise commands.BadArgument("Failed to read embed file contents.") from exc
         return data
     
-    @_embed.command(name="plain")
+    @_plain.command(name="post")
     @checks.has_permissions(PermissionLevel.MODERATOR)
-    async def plain(
+    async def plain_post(
         self,
         ctx: commands.Context,
         channel: Optional[MessageableChannel],
@@ -98,4 +98,4 @@ class PlainMessage(commands.Cog, name="Plain Message"):
 
         
 def setup(bot):
-    bot.add_cog(EmbedManager(bot))
+    bot.add_cog(PlainMessage(bot))
