@@ -83,7 +83,7 @@ class PlainMessage(commands.Cog, name="Plain Message"):
     
     @_embed.command(name="plain")
     @checks.has_permissions(PermissionLevel.MODERATOR)
-    async def embed_plain(
+    async def plain(
         self,
         ctx: commands.Context,
         channel: Optional[MessageableChannel],
