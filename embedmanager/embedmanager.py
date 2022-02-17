@@ -81,6 +81,14 @@ class PlainMessage(commands.Cog, name="Plain Message"):
             raise commands.BadArgument("Failed to read embed file contents.") from exc
         return data
     
+    @commands.group(name="plain", usage="<option>", invoke_without_command=True)
+    @checks.has_permissions(PermissionLevel.MODERATOR)
+    async def _plain(self, ctx: commands.Context):
+        """
+        Base command for Plain Message.
+        """
+        await ctx.send_help(ctx.command)
+        
     @_plain.command(name="post")
     @checks.has_permissions(PermissionLevel.MODERATOR)
     async def plain_post(
