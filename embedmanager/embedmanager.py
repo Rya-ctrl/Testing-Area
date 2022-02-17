@@ -284,7 +284,7 @@ class EmbedManager(commands.Cog, name="Embed Manager"):
 
         `message` may be a message ID or message link of the bot's embed.
         """
-        await message.edit(message)
+        await message.edit(content)
         await ctx.message.add_reaction(YES_EMOJI)
 
     @embed_edit.command(name="json", aliases=["fromjson", "fromdata"])
