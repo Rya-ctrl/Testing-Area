@@ -276,8 +276,8 @@ class EmbedManager(commands.Cog, name="Embed Manager"):
     async def embed_edit(
         self,
         ctx: commands.Context,
-        message: BotMessage,
         *,
+        message: BotMessage,
     ):
         """
         Edit a message sent by Bot's embeds.
